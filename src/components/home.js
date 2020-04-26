@@ -65,15 +65,31 @@ export default createReactClass({
     // The map parameters form the url take precedence over everything else
     // if they're not present try the cookie.
     state.map.view = this.getMapViewOrDefault(this.props.params.map);
+    console.log('state.map.view', state.map.view)
 
     state.selectedSquareQuadkey = this.props.params.square_id;
     state.selectedItemId = this.props.params.image_id;
-
+    console.log('selectedItemId=' + state.selectedItemId)
+   /*
+    this.setState({
+      map: {
+        view: this.getMapViewOrDefault(this.props.params.map)
+      },
+      selectedSquareQuadkey: this.props.params.square_id,
+      selectedItemId: this.props.params.image_id
+    })
+    */
+    
     if (this.props.params.user_id) {
       mapStore.queryUserImagery(this.props.params.user_id);
     }
 
+    //this.setState(state);
+
+    // TODO: Remove => this is already done in the loadImagery callback (which properly respects
+    // the async nature of queryUserImagery)
     state.results = this.getImagery();
+    console.log('home results', state.results)
     this.setState(state);
   },
 

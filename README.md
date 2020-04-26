@@ -60,7 +60,7 @@ Because `wdio` wraps `mocha`, you can send `mocha` args via `wdio.default.conf.j
 
 1. Start oam-api:
 
-   `oam-api$ docker-compose up`
+    `oam-api$ docker-compose up`
 
 2. Start chromedriver:
 

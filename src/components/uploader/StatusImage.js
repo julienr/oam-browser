@@ -13,6 +13,8 @@ function imageClick(event, metadata) {
   event.preventDefault();
   const modifiedMetdata = Object.assign({}, metadata);
   modifiedMetdata._id = metadata.uuid.split("/").slice(-1)[0];
+  console.log('metadata', metadata)
+  console.log('extracted id', modifiedMetdata._id)
   utils.imageUri(modifiedMetdata);
 }
 

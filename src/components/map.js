@@ -130,6 +130,7 @@ export default createReactClass({
     this.mapGridLayer.on("click", this.onGridSqrClick);
 
     // Map position from path.
+    console.log('this.props.map', this.props.map)
     var mapString = this.stringToMapView(this.props.map.view);
     var view = [mapString.lat, mapString.lng];
     var zoom = mapString.zoom;

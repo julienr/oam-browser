@@ -29,6 +29,7 @@ export default createReactClass({
           i.uuid.includes(this.props.selectedItemId)
         );
       });
+      console.log('setupCurrentImage, currentIndex=' + this.currentIndex)
       this.currentResult = this.props.results[this.currentIndex];
     } else {
       this.currentResult = null;
@@ -50,8 +51,8 @@ export default createReactClass({
 
   render: function() {
     var resultsPane = null;
-    if (this.props.selectedItemId) {
-      this.setupCurrentImage();
+    this.setupCurrentImage();
+    if (this.currentResult) {
       var pg = {
         total: this.props.results.length,
         current: this.currentIndex + 1,
